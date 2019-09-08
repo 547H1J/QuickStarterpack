@@ -32,20 +32,18 @@ function GalleryFunction(){
 
 // Owl Carousel Function
 function OwlCarouselFunction(){
-    $('.home-sliders').owlCarousel({
+    $('.owl-carousel').owlCarousel({
         loop:true,
-        // margin:10,
-        nav:false,
-        autoplay: false,
+        margin:10,
+        nav:true,
+        autoplay: true,
         autoplayHoverPause: true,
         autoplayTimeout: 5000,
         autoplaySpeed: 3000,
-        navSpeed: 2000,
-        dots:true,
-        dotsData:true,
-        dotsSpeed: 2000,
+        navSpeed: 4000,
+        dotsSpeed: 4000,
         dragEndSpeed: 1000,
-        // navText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+        navText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
         // responsive:{
         //     0:{
         //         items:1
@@ -66,20 +64,22 @@ function OwlCarouselFunction(){
 // Slick Mobile Menu Function
 function SlickMobileMenuFunction(){
     $('#menu').slicknav({
+        label: 'Menu',
         duration: 500,
         prependTo:'#demo'
     });
 }
 
 
+
 // isotop
 function isotop() {
-    $(".data-tittle li").on('click', function() {
+    $("#filters li").on('click', function() {
         var selector = $(this).attr('data-filter');
-        $('.products').isotope({
+        $('#grid').isotope({
             filter: selector
         })
     })
 
-    (".products").isotope();
+    ("#grid").isotope();
 }
