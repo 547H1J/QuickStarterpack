@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+// Configuration and helpers
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+//Base stuff
+@import "base/fonts";
+@import "base/base";
+@import "base/helpers";
+
+// Layout-related sections
+@import "layout/header";
+@import "layout/footer";
+
+// Page-specific styles
+@import "pages/home";
+
+//Responsive styles
+@import "responsive/responsive";
