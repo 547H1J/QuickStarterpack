@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// before after
+@mixin pseudo($pos: absolute, $content: "") {
+	position: $pos;
+	content: $content;
+}
+
+//font style
+@mixin font_face($sze: 14px, $clr: #000, $fw: 400, $lh: 1) {
+	@if $sze {
+		font-size: $sze;
+	}
+	@if $clr {
+		color: $clr;
+	}
+	@if $fw {
+		font-weight: $fw;
+	}
+	@if $lh {
+		line-height: $lh;
+	}
+}
+
+//Remove Margin Padding spacing
+@mixin rest_mp {
+	margin: 0;
+	padding: 0;
+}
+
+//transition
+@mixin transition_time($tt) {
+	transition: all $tt;
+	-webkit-transition: all $tt;
+	-moz-transition: all $tt;
+	-ms-transition: all $tt;
+	-o-transition: all $tt;
+}
+
+
+
+// Media Query Manager
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint==Xl_desktop {
+        @media only screen and (min-width: 1200px) and (max-width: 1499px) {
+            @content
+        }
+    }
+
+    @if $breakpoint==Xl_desktop {
+        @media only screen and (min-width: 991px) and (max-width: 1199px) {
+            @content
+        }
+    }
+
+    @if $breakpoint==tablet {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            @content
+        }
+    }
+
+    @if $breakpoint==mobile {
+        @media only screen and (min-width: 320px) and (max-width: 767px) {
+            @content
+        }
+    }
+
+
+}
